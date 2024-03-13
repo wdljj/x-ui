@@ -23,14 +23,14 @@
             <a-radio-button :value="false">certificate file content</a-radio-button>
         </a-radio-group>
     </a-form-item>
-<template v-if="inbound.stream.tls.certs[0].useFile">
-    <a-form-item label="公钥文件路径">
-        <a-input v-model.trim="inbound.stream.tls.certs[0].certFile" :value="'/etc/x-ui/server.crt'"></a-input>
-    </a-form-item>
-    <a-form-item label="密钥文件路径">
-        <a-input v-model.trim="inbound.stream.tls.certs[0].keyFile" :value="'/etc/x-ui/server.key'"></a-input>
-    </a-form-item>
-</template>
+    <template v-if="inbound.stream.tls.certs[0].useFile">
+        <a-form-item label="/etc/x-ui/server.crt">
+            <a-input v-model.trim="inbound.stream.tls.certs[0].certFile"></a-input>
+        </a-form-item>
+        <a-form-item label="/etc/x-ui/server.key">
+            <a-input v-model.trim="inbound.stream.tls.certs[0].keyFile"></a-input>
+        </a-form-item>
+    </template>
     <template v-else>
         <a-form-item label="公钥内容">
             <a-input type="textarea" :rows="2"
